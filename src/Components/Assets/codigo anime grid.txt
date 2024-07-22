@@ -1,0 +1,67 @@
+const dotGrid = document.getElementById('grid');
+dotGrid.setAttribute('id', 'dot-grid');
+dotGrid.classList.add('grid', 'grid-cols-10', 'gap-1');
+
+
+const gridWidth = 50
+const gridHeight = 3
+let index = 0
+
+/*--------------------------------Grid Functionality-----------------------------*/
+
+for (let i = 0; i < gridWidth; i++) {
+    for (let j = 0; j < gridHeight; j++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dots_point', 'bg-gray-700', 'h-1', 'w-1', 'rounded-full', 'cursor-crosshair', 'bg-gradient-to-b', 'from-slate-700', 'to-slate-400', 'opacity-50');
+        // Assign a key to each dot based on its position
+        dot.setAttribute('key', `${i}-${j}`);
+        dot.setAttribute('data-index', `${index}`);
+        dot.addEventListener('click',(e)=>{
+            anime({
+                targets: '.dots_point',
+                scale: [
+                    { value: 1.35, easing: "easeOutSine", duration: 250 },
+                    { value: 1, easing: "easeInOutQuad", duration: 500 },
+                ],
+                translateY: [
+                    { value: -15, easing: "easeOutSine", duration: 250 },
+                    { value: 0, easing: "easeInOutQuad", duration: 500 },
+                ],
+                opacity: [
+                    { value: 1, easing: "easeOutSine", duration: 250 },
+                    { value: 0.5, easing: "easeInOutSine", duration: 500 },
+                ],
+                delay: anime.stagger(200, {
+                    grid: [10,10],
+                    from: e.target.dataset.index,
+                }),
+            })
+        })
+        dotGrid.appendChild(dot);
+        index++
+    }
+}
+
+//------------------------------SPECS FUNCTIONALITY-----------------------------
+
+const firstSpec = document.getElementById('spec_cursor1');
+const secondSpec = document.getElementById('spec_cursor2');
+const thirdSpec = document.getElementById('spec_cursor3');
+const specInfo = document.getElementById('spec_info')
+
+firstFeature = 'Immerse yourself in your favorite music with our new headphones, featuring soft and plush cushioned cups that provide exceptional noise isolation. Feel the wave of sound with every beat as you sink into your own private musical oasis'
+secondFeature = 'Take your music on the go with ease thanks to the foldable design of our headphones. Perfect for travel or daily commutes, simply collapse the headphones for compact storage and convenient transportation. Feel the wave wherever you may roam'
+thirdFeature = `Designed for all-day comfort, our headphones feature a padded and adjustable headband that won't cause any discomfort during extended wear Feel the wave of music wash over you in luxurious comfort with our lightweight and ergonomic design`
+
+
+firstSpec.addEventListener('mousemove',()=>{
+    specInfo.innerText = firstFeature
+})
+
+secondSpec.addEventListener('mousemove',()=>{
+    specInfo.innerText = secondFeature
+})
+
+thirdSpec.addEventListener('mousemove',()=>{
+    specInfo.innerText = thirdFeature
+})
