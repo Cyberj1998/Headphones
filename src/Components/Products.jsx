@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from "react";
-import { motion } from 'framer-motion';
 import ProductCard from './ProductCard';
 import { ProductList } from './ProductList';
 

@@ -28,12 +28,13 @@ function NavBar ({quantity}) {
                 <input id="input_search" className="text-[#898989] md:text-[15px] text-[10px] border-l border-b border-black w-[200px] md:w-[400px] bg-[transparent]" type="text" placeholder="search for your ideal model" />
                 <img id="glass" src={glass} className="md:h-[30px] h-[25px] md:w-[30px] w-[25px] cursor-pointer" alt="search-icon" />
             </div>
-            <img id="burger" src={burger} className="md:hidden flex h-[30px] w-[30px] cursor-pointer mr-[10px]" alt="burger" />
+            <img id="burger" src={burger} className="md:hidden flex h-[30px] w-[30px] cursor-pointer mr-[10px] z-10" alt="burger" onClick={handleSoppingCart} />
             <ul className="md:flex hidden justify-center items-center font-sans font-semibold cursor-pointer mr-[10px]">
                 <li className="mr-[10px] text-[10px] md:text-[15px] text-orange-500 cursor-pointer z-10">START</li>
                 <li className="mr-[10px] text-[10px] md:text-[15px] text-[#989898] cursor-pointer z-10">Products</li>
                 <li className="mr-[10px] text-[10px] md:text-[15px] text-[#989898] cursor-pointer z-10">Contact</li>
                 <img src={cart} className="cursor-pointer h-[20px] w-[20px] z-10" onClick={handleSoppingCart} />
+                <p className="text-white font-semibold font-sans">{totalQuantity}</p>
             </ul>
         </div>
     )
