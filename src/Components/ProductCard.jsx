@@ -43,6 +43,7 @@ const BentoTilt = ({ children, className = '' }) => {
 }
 
 const ProductCard = (props) => {
+
     const carts = useSelector(store=>store.cart.items)
     console.log(carts)
     const {id, name, price, image } = props.data
@@ -60,7 +61,7 @@ const ProductCard = (props) => {
        <h3 className='text-1xl py-3 text-center font-sans font-semibold text-black'>{name}</h3>
        <div className='flex justify-between items-center'>
         <p>
-            <span className='text-1xl py-3 text-center font-sans font-semibold m-[5px] text-[#898989]'>{price}$</span>
+            <span className='text-1xl py-3 text-center font-sans font-semibold m-[5px] text-[#898989]'>${price}</span>
         </p>
         <button onClick={handleAddToCart} className="font-sans font-semibold text-[#fff] text-[13px] bg-[#454545] p-[5px] rounded-[5px] flex flex-row justify-center items-center z-10 w-fit">Add To <span className="bg-gradient-to-r from-orange-700 to-orange-400 text-transparent bg-clip-text">Cart</span> <img id="cart" src={cart} className="h-[12px] w-[12px] ml-[5px]" alt="cart" /></button>
        </div>

@@ -4,6 +4,7 @@ import anime from "animejs"
 import girl from './Assets/girl.png'
 import earbuds from './Assets/EarBuds.png'
 
+
 const variants = {
   hidden:{opacity: 0},
   visible:{opacity: 1}
@@ -72,7 +73,7 @@ function Hero () {
                  className='h-full w-full flex justify-around items-center flex-col'>
                   <h1 id='hero_title' className='text-[#565656] font-sans font-semibold md:text-5xl text-2xl text-center mt-[50px]'><span className='bg-gradient-to-r from-orange-700 to-orange-400 text-transparent bg-clip-text'>Dive</span> into a world of inmersive <span className='bg-gradient-to-r from-orange-700 to-orange-400 text-transparent bg-clip-text'>Sounds</span></h1>
                   <p id='hero_p' className='text-[#989898] md:text-[15px] text-[10px] font-sans font-semibold'>With our new collection of wireless headphones</p>
-                  <img id='girl' src={girl} className='md:h-[500px] h-[150px]' alt="girl" />
+                  <img id='girl' src={girl} alt="girl" className='md:h-[800px] h-[150px]' />
                 </motion.div>
             </div>
             <div id='right_section' className='bg-[#212121] md:h-[90vh] h-[50%] md:w-[50%] w-[100%] flex justify-center items-center flex-col'>
