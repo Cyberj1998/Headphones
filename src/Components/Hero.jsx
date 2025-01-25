@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import anime from "animejs"
 import girl from './Assets/girl.png'
 import earbuds from './Assets/EarBuds.png'
-
+import HandAnimation from './HandAnimation'
 
 const variants = {
   hidden:{opacity: 0},
@@ -92,6 +92,7 @@ function Hero () {
                  id='grid_image_container' className='md:h-[250px] h-[200px] md:w-[250px] w-[200px] flex justify-center items-center'>
                     <img id='headphones' className='md:h-[250px] h-[150px] md:w-[250px] w-[150px] mt-[100px] ml-[-100px]' src={earbuds} alt="headphones" />
                     <div id='grid' className='md:h-[200px] h-[150px] md:w-[200px] w-[150px] absolute md:mt-[-150px] mt-[-60px] md:ml-[150px] ml-[100px] grid grid-cols-10 gap-1' style={{gridTemplateColumns: `repeat(${gridWidth}, 1fr)`}}>
+                      <HandAnimation />
                       {dots}
                     </div>
                 </motion.div>
